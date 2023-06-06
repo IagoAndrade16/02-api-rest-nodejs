@@ -1,5 +1,4 @@
 import fastify from 'fastify'
-import { knex } from './database'
 import { transactionsRoutes } from './routes/transactions'
 
 const app = fastify()
