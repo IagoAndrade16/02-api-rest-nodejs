@@ -5,9 +5,9 @@ import { randomUUID } from 'node:crypto'
 import { checkSessionIdExists } from '../middlewares/check-session-exists'
 
 export async function transactionsRoutes(app: FastifyInstance) {
-  app.addHook('preHandler', async (req, res) => {
-    console.log(`[${req.method}] ${req.url}`)
-  })
+  // app.addHook('preHandler', async (req, res) => {
+  //   console.log(`[${req.method}] ${req.url}`)
+  // })
 
   app.post('/', async (req, res) => {
     const createTransactionBodySchema = z.object({
@@ -43,7 +43,7 @@ export async function transactionsRoutes(app: FastifyInstance) {
     {
       preHandler: checkSessionIdExists,
     },
-    async (req, res) => {
+    async (req) => {
       const { sessionId } = req.cookies
 
       const transactions = await knex('transactions')
