@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "lint": "eslint src --ext .ts --fix",
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsup src"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@types/node": "^20.2.5",
     "eslint": "^8.42.0",
     "supertest": "^6.3.3",
+    "tsup": "^6.7.0",
     "tsx": "^3.12.7",
     "typescript": "^5.1.3",
     "vitest": "^0.32.0"
